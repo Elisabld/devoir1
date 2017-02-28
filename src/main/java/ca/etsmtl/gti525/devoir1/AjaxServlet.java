@@ -6,10 +6,21 @@
  import javax.servlet.* ;
  import javax.servlet.http.* ;
 
- public Web  extends HttpServlet {
+@WebServlet("/ajaxservlet")
 
+ public class AjaxServlet extends HttpServlet {
+	 private Collection collection = new Collection();
+	 private static final long serialVersionUID = -4865099303373864287L;
+
+	 public AjaxServlet(){
+		 
+	 }
+	 
+	 
 	 public  void doGet(HttpServletRequest request, HttpServletResponse response)
 	 throws ServletException, IOException  {
+		 
+	
 	
      Image image = (Image)request.getAttribute("image");
 
