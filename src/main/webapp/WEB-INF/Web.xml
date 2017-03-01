@@ -3,15 +3,34 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-
+  	<error-page>
+  		<error-code>404</error-code>
+    	<location>/erreur.jsp</location>
+	</error-page>
 	<servlet>
-		<servlet-name>WatermarkServletTest</servlet-name>
+		<servlet-name>WatermarkServlet</servlet-name>
 		<servlet-class>ca.etsmtl.gti525.devoir1.WatermarkServlet</servlet-class>
+		<init-param>
+		<param-name> dossierVignettes </param-name>
+		<param-value>vignettes</param-value>
+		</init-param>
+		<init-param>
+		<param-name> dossierOriginaux </param-name>
+		<param-value>dossierUltraTopSecret</param-value>
+		</init-param>
+		<init-param>
+	        <param-name>message</param-name>
+	    	<param-value>Voici la photo originale</param-value>
+	    </init-param>
 	</servlet>
   
   	<servlet>
 		<servlet-name>AjaxServletTest</servlet-name>
 		<servlet-class>ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
+		<init-param>
+		<param-name> dossierVignettes </param-name>
+		<param-value>vignettes</param-value>
+		</init-param>
 	</servlet>
 
 	<servlet-mapping>
