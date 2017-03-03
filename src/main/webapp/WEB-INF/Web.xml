@@ -23,7 +23,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 		</init-param>
 		<init-param>
 	        	<param-name>message</param-name>
-	    		<param-value>Voici la photo originale</param-value>
+	    		<param-value>YOU HAVE TO PAY!</param-value>
 	    	</init-param>
 	</servlet>
 	
