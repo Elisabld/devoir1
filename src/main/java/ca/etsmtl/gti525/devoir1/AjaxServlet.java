@@ -28,7 +28,7 @@ import javax.swing.ImageIcon;
 
 			 response.setContentType("text/html");
 
-			 request.setAttribute("photo", photo);
+			 request.setAttribute("image", photo);
 			 request.setAttribute("dossierVignettes", getServletConfig().getInitParameter("dossierVignettes"));
 
 			 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/details.jsp");
