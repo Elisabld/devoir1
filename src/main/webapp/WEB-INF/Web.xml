@@ -10,34 +10,36 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	<servlet>
 		<servlet-name>WatermarkServlet</servlet-name>
 		<servlet-class>ca.etsmtl.gti525.devoir1.WatermarkServlet</servlet-class>
+		
 		<init-param>
-		<param-name> dossierVignettes </param-name>
-		<param-value>vignettes</param-value>
+			<param-name> dossierVignettes </param-name>
+			<param-value>vignettes</param-value>
 		</init-param>
 		<init-param>
-		<param-name> dossierOriginaux </param-name>
-		<param-value>dossierUltraTopSecret</param-value>
+			<param-name> dossierOriginaux </param-name>
+			<param-value>dossierUltraTopSecret</param-value>
 		</init-param>
 		<init-param>
-	        <param-name>message</param-name>
-	    	<param-value>Voici la photo originale</param-value>
-	    </init-param>
+	        	<param-name>message</param-name>
+	    		<param-value>Voici la photo originale</param-value>
+	    	</init-param>
 	</servlet>
-  
-  	<servlet>
-		<servlet-name>AjaxServlet</servlet-name>
-		<servlet-class>ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
-		<init-param>
-		<param-name> dossierVignettes </param-name>
-		<param-value>vignettes</param-value>
-		</init-param>
-	</servlet>
-
+	
 	<servlet-mapping>
 		<servlet-name>WatermarkServlet</servlet-name>
 		<url-pattern>/Watermark/*</url-pattern>
 	</servlet-mapping>
   
+  
+  	<servlet>
+		<servlet-name>AjaxServlet</servlet-name>
+		<servlet-class>ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
+		<init-param>
+			<param-name> dossierVignettes </param-name>
+			<param-value>vignettes</param-value>
+		</init-param>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>AjaxServlet</servlet-name>
 		<url-pattern>/AjaxServlet</url-pattern>
