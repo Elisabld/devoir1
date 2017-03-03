@@ -19,7 +19,7 @@
 		 Collection collection = new Collection();
 
 		 		 
-		 if (!(request.getParameter("listeImages").isEmpty() OR request.getParameter("listeImages") == "" OR request.getParameter("listeImages") == null)) {
+		 if (!(request.getParameter("listeImages").isEmpty() || request.getParameter("listeImages") == "" || request.getParameter("listeImages") == null)) {
 			 
 			 Integer idPhoto = Integer.parseInt(request.getParameter("listeImages"));
 			 Photo photo = collection.getPhoto(idPhoto);
@@ -40,7 +40,7 @@
 			 	dispatcher.forward(request, response);
 			 }
 			 else{
-				 if (request.getParameter("listeImages").isEmpty() OR request.getParameter("listeImages") == ""){
+				 if (request.getParameter("listeImages").isEmpty() || request.getParameter("listeImages") == ""){
 					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jsp");
 					dispatcher.forward(request, response);
 				 }
