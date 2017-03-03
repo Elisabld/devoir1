@@ -22,7 +22,7 @@
 		 if (!(request.getParameter("listeImages").isEmpty() || request.getParameter("listeImages") == "" || request.getParameter("listeImages") == null)) {
 			 
 			 Integer idPhoto = Integer.parseInt(request.getParameter("listeImages"));
-			 Photo photo = collection.getPhoto(idPhoto);
+			 Image photo = collection.getImage(idPhoto);
 
 			 response.setContentType("text/html");
 
