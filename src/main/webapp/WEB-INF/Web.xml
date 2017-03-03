@@ -3,10 +3,12 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	
   	<error-page>
   		<error-code>404</error-code>
-    	<location>/erreur.jsp</location>
+    		<location>/erreur.jsp</location>
 	</error-page>
+	
 	<servlet>
 		<servlet-name>WatermarkServlet</servlet-name>
 		<servlet-class>ca.etsmtl.gti525.devoir1.WatermarkServlet</servlet-class>
