@@ -19,9 +19,18 @@
 		 Collection collection = new Collection();
 
 		 		 
-		 if (request.getParameter("listeImages").isEmpty() and request.getParameter("listeImages") == "") {
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jsp");
-			dispatcher.forward(request, response);
+		 if (!(request.getParameter("listeImages").isEmpty() OR request.getParameter("listeImages") == "" OR request.getParameter("listeImages") == null)) {
+			 
+			 Integer idPhoto = Integer.parseInt(request.getParameter("listeImages"));
+			 Photo photo = collection.getPhoto(idPhoto);
+
+			 response.setContentType("text/html");
+
+			 request.setAttribute("photo", photo);
+			 request.setAttribute("dossierVignettes", getServletConfig().getInitParameter("dossierVignettes"));
+
+			 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/details.jsp");
+			 dispatcher.include(request, response);
 		 }
 		 
 		 else {
@@ -31,16 +40,11 @@
 			 	dispatcher.forward(request, response);
 			 }
 			 else{
-				Integer idPhoto = Integer.parseInt(request.getParameter("listeImages"));
-				Photo photo = collection.getPhoto(idPhoto);
-
-				response.setContentType("text/html");
-
-				request.setAttribute("photo", photo);
-				request.setAttribute("dossierVignettes", getServletConfig().getInitParameter("dossierVignettes"));
-
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/details.jsp");
-				dispatcher.include(request, response);
+				 if (request.getParameter("listeImages").isEmpty() OR request.getParameter("listeImages") == ""){
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jsp");
+					dispatcher.forward(request, response);
+				 }
+	
 			 }
 		 }
 			 
