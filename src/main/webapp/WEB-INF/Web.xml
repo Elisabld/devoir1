@@ -25,7 +25,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	</servlet>
   
   	<servlet>
-		<servlet-name>AjaxServletTest</servlet-name>
+		<servlet-name>AjaxServlet</servlet-name>
 		<servlet-class>ca.etsmtl.gti525.devoir1.AjaxServlet</servlet-class>
 		<init-param>
 		<param-name> dossierVignettes </param-name>
@@ -34,12 +34,12 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>WatermarkServletTest</servlet-name>
+		<servlet-name>WatermarkServlet</servlet-name>
 		<url-pattern>/Watermark</url-pattern>
 	</servlet-mapping>
   
 	<servlet-mapping>
-		<servlet-name>AjaxServletTest</servlet-name>
+		<servlet-name>AjaxServlet</servlet-name>
 		<url-pattern>/AjaxServlet</url-pattern>
 	</servlet-mapping>
 </web-app>
