@@ -4,9 +4,8 @@
  import javax.servlet.* ;
  import javax.servlet.http.* ;
 
-@WebServlet("/ajaxservlet")
-
  public class AjaxServlet extends HttpServlet {
+	 
 	 private Collection collection = new Collection();
 	 private static final long serialVersionUID = -4865099303373864287L;
 
@@ -17,9 +16,7 @@
 	 
 	 public void doGet(HttpServletRequest request, HttpServletResponse response)
 	 throws ServletException, IOException  {
-		 
-		 Collection images = new Collection();
-		 
+		 		 
 		 if (request.getParameter("listeImages").isEmpty() and request.getParameter("listeImages") == "") {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jsp");
 			dispatcher.forward(request, response);
