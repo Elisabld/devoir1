@@ -25,8 +25,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.ImageIcon;
 
-@WebServlet("/watermark")
-
 public class WatermarkServlet extends HttpServlet {
 	private static final long serialVersionUID = -4865099303373864287L;
 
