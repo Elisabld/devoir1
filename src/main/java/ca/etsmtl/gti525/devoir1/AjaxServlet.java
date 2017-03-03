@@ -19,7 +19,7 @@
 		 Collection collection = new Collection();
 
 		 		 
-		 if (!(request.getParameter("listeImages").isEmpty() || request.getParameter("listeImages") == "" || request.getParameter("listeImages") == null)) {
+		 if (!(request.getParameter("listeImages") == "" || request.getParameter("listeImages") == null)) {
 			 
 			 Integer idPhoto = Integer.parseInt(request.getParameter("listeImages"));
 			 Image photo = collection.getImage(idPhoto);
@@ -34,17 +34,18 @@
 		 }
 		 
 		 else {
-			 if (request.getParameter("listeImages") == null){
-			 	request.setAttribute("collection", collection.getImages());
-			 	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/collection.jsp");
-			 	dispatcher.forward(request, response);
+			 if (request.getParameter("listeImages") != null) {
+				if (request.getParameter("listeImages").isEmpty() || request.getParameter("listeImages") == "") {
+					
+			 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jsp");
+					dispatcher.forward(request, response);
+				}
+		
 			 }
 			 else{
-				 if (request.getParameter("listeImages").isEmpty() || request.getParameter("listeImages") == ""){
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jsp");
-					dispatcher.forward(request, response);
-				 }
-	
+				request.setAttribute("collection", collection.getImages());
+			 	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/collection.jsp");
+			 	dispatcher.forward(request, response);
 			 }
 		 }
 			 
