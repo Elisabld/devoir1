@@ -6,7 +6,6 @@
 
  public class AjaxServlet extends HttpServlet {
 	 
-	 private Collection collection = new Collection();
 	 private static final long serialVersionUID = -4865099303373864287L;
 
 	 public AjaxServlet(){
@@ -16,6 +15,9 @@
 	 
 	 public void doGet(HttpServletRequest request, HttpServletResponse response)
 	 throws ServletException, IOException  {
+		 
+		 private Collection collection = new Collection();
+
 		 		 
 		 if (request.getParameter("listeImages").isEmpty() and request.getParameter("listeImages") == "") {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/error.jsp");
@@ -24,13 +26,13 @@
 		 
 		 else {
 			 if (request.getParameter("listeImages") == null){
-			 	request.setAttribute("collection", images.getImages());
+			 	request.setAttribute("collection", collection.getImages());
 			 	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/collection.jsp");
 			 	dispatcher.forward(request, response);
 			 }
 			 else{
 				Integer idPhoto = Integer.parseInt(request.getParameter("listeImages"));
-				Photo photo = images.getPhoto(idPhoto);
+				Photo photo = collection.getPhoto(idPhoto);
 
 				response.setContentType("text/html");
 
