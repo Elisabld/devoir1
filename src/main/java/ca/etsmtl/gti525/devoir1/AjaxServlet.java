@@ -3,6 +3,8 @@
  import java.io.* ;
  import javax.servlet.* ;
  import javax.servlet.http.* ;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
  public class AjaxServlet extends HttpServlet {
 	 
