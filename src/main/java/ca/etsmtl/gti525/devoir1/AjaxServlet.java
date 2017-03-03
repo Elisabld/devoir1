@@ -16,7 +16,7 @@
 	 public void doGet(HttpServletRequest request, HttpServletResponse response)
 	 throws ServletException, IOException  {
 		 
-		 private Collection collection = new Collection();
+		 Collection collection = new Collection();
 
 		 		 
 		 if (request.getParameter("listeImages").isEmpty() and request.getParameter("listeImages") == "") {
