@@ -29,7 +29,7 @@
 			 	dispatcher.forward(request, response);
 			 }
 			 else{
-				Int idPhoto = Int.parseInt(request.getParameter("listeImages"));
+				Integer idPhoto = Integer.parseInt(request.getParameter("listeImages"));
 				Photo photo = images.getPhoto(idPhoto);
 
 				response.setContentType("text/html");
