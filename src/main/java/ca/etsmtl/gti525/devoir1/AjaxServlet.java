@@ -29,7 +29,7 @@
 			 	dispatcher.forward(request, response);
 			 }
 			 else{
-				Int idPhoto = Int.parseInt(req.getParameter("listeImages"));
+				Int idPhoto = Int.parseInt(request.getParameter("listeImages"));
 				Photo photo = images.getPhoto(idPhoto);
 
 				response.setContentType("text/html");
@@ -41,10 +41,6 @@
 				dispatcher.include(request, response);
 			 }
 		 }
-		 
-			 
-		 
-
 			 
 	}
 
